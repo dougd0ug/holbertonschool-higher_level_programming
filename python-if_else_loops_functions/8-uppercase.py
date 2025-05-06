@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 def uppercase(str):
     for i in str:
         upper = ord(i)
@@ -7,9 +6,3 @@ def uppercase(str):
             upper -= 32
 
         print("{:c}" .format(upper), end="")
-
-#!/usr/bin/env python3
-uppercase = __import__('8-uppercase').uppercase
-
-uppercase("best")
-uppercase("Best School 98 Battery street")
