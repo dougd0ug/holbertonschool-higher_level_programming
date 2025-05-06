@@ -1,5 +1,5 @@
 #!/usr/bin/python3
 
 def uppercase(str):
-    for i in range(str):
+    for i in str:
         print(f"{i + 32}")
