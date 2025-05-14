@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 def roman_to_int(roman_string):
-    if not roman_string:
+    if not isinstance(roman_string, str) or roman_string is None:
         return 0
     else:
         result = 0
@@ -18,8 +18,8 @@ def roman_to_int(roman_string):
 
     for i in roman_string:
         if conversion[i] > compare:
-            compare = conversion[i] - compare
+            result += conversion[i] - 2 * compare
         else:
-            compare = conversion[i]
-        result += compare
+            result += conversion[i]
+        compare = conversion[i]
     return result
