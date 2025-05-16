@@ -32,3 +32,42 @@ Negative integers
 
     >>> print(add_integer(-4, -5))
     -9
+
+String inputs
+
+.. code-block:: python
+
+    >>> print(add_integer("4", 5))
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> print(add_integer(5, "4"))
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+    >>> print(add_integer("Hello", -5))
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> print(add_integer(5, "Hello"))
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+    >>> print(add_integer(None))
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> print(add_integer(None, 4))
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> print(add_integer(4, None))
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
