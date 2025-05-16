@@ -52,6 +52,11 @@ String inputs
         ...
     TypeError: a must be an integer
 
+    >>> print(add_integer("Hello", "World"))
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
     >>> print(add_integer(5, "Hello"))
     Traceback (most recent call last):
         ...
