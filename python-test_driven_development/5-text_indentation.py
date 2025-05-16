@@ -1,26 +1,24 @@
 #!/usr/bin/python3
+
 """
-5-text_indentation.py
-prints a text with 2 new lines after each of these characters: ., ? and :
+Text indentation
 """
 
 
 def text_indentation(text):
     """
-    prints a text with 2 new lines after each of these characters: ., ? and :
+    Prints text with two newlines
     """
-
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    buffer = ""
-
-    for char in text:
-        buffer += char
-        if char in ".?:":
-            print(buffer.strip())
-            print()
-            buffer = ""
-
-    if buffer.strip():
-        print(buffer.strip())
+    i = 0
+    while i < len(text):
+        print("{}".format(text[i]), end="")
+        if text[i] in ".?:":
+            print("\n")
+            i += 1
+            while i < len(text) and text[i] == " ":
+                i += 1
+            continue
+        i += 1
