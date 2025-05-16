@@ -30,6 +30,43 @@ project?
 Yes.
 <BLANKLINE>
 
+>>> text_indentation("")
+
+>>> text_indentation(".")
+.
+<BLANKLINE>
+
+>>> text_indentation("...")
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+
+>>> text_indentation("Hello.   World")
+Hello.
+<BLANKLINE>
+World
+
+>>> text_indentation("Wait... What??? Really: Yes:")
+Wait.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+What?
+<BLANKLINE>
+?
+<BLANKLINE>
+?
+<BLANKLINE>
+Really:
+<BLANKLINE>
+Yes:
+<BLANKLINE>
+
 >>> text_indentation(6)
 Traceback (most recent call last):
     ...
