@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+2-matrix_divided.py
+Divide elements of a matrix by an integer in a new matrix
+"""
+
 
 def matrix_divided(matrix, div):
     """
