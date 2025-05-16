@@ -71,3 +71,15 @@ String inputs
     Traceback (most recent call last):
         ...
     TypeError: a must be an integer
+
+    >>> print(add_integer(True, 4))
+    5
+
+    >>> print(add_integer(False, 4))
+    4
+
+    >>> print(add_integer(4, True))
+    5
+
+    >>> print(add_integer(4, False))
+    4
