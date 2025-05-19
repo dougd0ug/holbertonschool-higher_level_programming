@@ -12,9 +12,11 @@ class Square:
     __size = None
 
     def __init__(self, size=0):
+        """
+        def the arguments
+        """
         self.size = __size
-
-    if __size < 0:
-        raise ValueError("size must be >= 0")
-    if not isinstance(int, __size):
-        raise TypeError("size must be an integer")
+        if __size < 0:
+            raise ValueError("size must be >= 0")
+        if not isinstance(int, __size):
+            raise TypeError("size must be an integer")
