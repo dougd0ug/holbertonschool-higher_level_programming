@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-3-square.py
+4-square.py
 Write an class Square that define a square
 """
 
@@ -13,31 +13,26 @@ class Square:
         """
         def the arguments and conditions of initialisation
         """
-        if not isinstance(size, int):
+        self.__size = size
+
+    @property
+    def size(self):
+        """
+        def the property
+        """
+        return self.__size
+
+    @size.setter
+    def size(self, value):
+        """
+        def the setter
+        """
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        elif size < 0:
+        elif value < 0:
             raise ValueError("size must be >= 0")
         else:
-            self.__size = size
-
-        @property
-        def size(self):
-            """
-            def the property
-            """
-            return self.__size
-
-        @size.setter
-        def size(self, value):
-            """
-            def the setter
-            """
-            if not isinstance(size, int):
-                raise TypeError("size must be an integer")
-            elif size < 0:
-                raise ValueError("size must be >= 0")
-            else:
-                self.__size = value
+            self.__size = value
 
     def area(self):
         """
