@@ -9,13 +9,13 @@ class Square:
     """
     Class Square
     """
-    __size = None
+    size = None
 
     def __init__(self, size=0):
         """
         def the arguments
         """
-        self.size = __size
+        self.size = size
         if self.size < 0:
             raise ValueError("size must be >= 0")
         if not isinstance(int, self.size):
