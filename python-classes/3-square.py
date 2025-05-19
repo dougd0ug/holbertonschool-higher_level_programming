@@ -20,9 +20,9 @@ class Square:
         else:
             self.__size = size
 
-    def area(self):
-        """
-        return the area of a square
-        """
-        area_square = self.size * 2
-        return area_square
+def area(self):
+    """
+    return the area of a square
+    """
+    area_square = self.size * 2
+    return area_square
