@@ -6,4 +6,7 @@ Write an empty class Square
 
 
 class Square:
+    """
+    Class Square
+    """
     pass
