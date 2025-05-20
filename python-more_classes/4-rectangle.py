@@ -84,8 +84,5 @@ class Rectangle:
             perimeter_rectangle = ((self.height + self.width) * 2)
         return perimeter_rectangle
 
-    def __del__(self):
-        print("Bye rectangle...")
-
     def __repr__(self):
         return f"Rectangle({self.width}, {self.height})"
