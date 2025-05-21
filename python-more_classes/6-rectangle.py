@@ -9,6 +9,8 @@ class Rectangle:
     """
     Create a class Rectangle
     """
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """
         def the arguments and conditions of initialisation
