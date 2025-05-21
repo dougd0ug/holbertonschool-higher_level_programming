@@ -12,14 +12,13 @@ class Rectangle:
     number_of_instances = 0
     print_symbol = "#"
 
-    def __init__(self, width=0, height=0, print_symbol="#"):
+    def __init__(self, width=0, height=0):
         """
         def the arguments and conditions of initialisation
         """
         self.width = width
         self.height = height
         Rectangle.number_of_instances += 1
-        self.print_symbol = print_symbol
 
     def __str__(self):
         """
