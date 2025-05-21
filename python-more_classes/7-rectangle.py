@@ -28,7 +28,7 @@ class Rectangle:
             return ""
         lines = []
         for _ in range(self.height):
-            lines.append(self.print_symbol * self.width)
+            lines.append(str(self.print_symbol) * self.width)
 
         return "\n".join(lines)
 
