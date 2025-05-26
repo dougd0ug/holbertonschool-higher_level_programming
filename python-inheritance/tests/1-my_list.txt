@@ -18,3 +18,15 @@
     >>> my_list.append(9)
     >>> print_sorted(my_list)
     [2, 4, 7, 9]
+
+    >>> my_list = MyList()
+    >>> my_list.append("Hello")
+    >>> my_list.append("World")
+    >>> my_list.append("Hi")
+    >>> my_list.append(2)
+    >>> print_sorted(my_list)
+    ["Hello", "Hi", "World"]
+
+    >>> my_list = MyList()
+    >>> print_sorted(my_list)
+    []
