@@ -24,7 +24,7 @@
     >>> my_list.append("World")
     >>> my_list.append("Hi")
     >>> print_sorted(my_list)
-    ["Hello", "Hi", "World"]
+    ['Hello', 'Hi', 'World']
 
     >>> my_list = MyList()
     >>> print_sorted(my_list)
