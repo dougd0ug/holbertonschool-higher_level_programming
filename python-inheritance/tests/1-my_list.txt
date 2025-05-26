@@ -23,7 +23,6 @@
     >>> my_list.append("Hello")
     >>> my_list.append("World")
     >>> my_list.append("Hi")
-    >>> my_list.append(2)
     >>> print_sorted(my_list)
     ["Hello", "Hi", "World"]
 
