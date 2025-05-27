@@ -4,28 +4,52 @@ Create an abc class
 """
 
 from abc import ABC, abstractmethod
+from math import pi
 
 
-class Animal(ABC):
+class Shape(ABC):
     """
-    ABC Animal class
+    ABC shape class
     """
     @abstractmethod
-    def sound(self):
+    def area(self):
+        pass
+
+    def perimeter(self):
         pass
 
 
-class Dog(Animal):
+class Circle(Shape):
     """
-    Dog class inherit from Animal
+    Circle class inherit from Shape
     """
-    def sound(self):
-        return "Bark"
+    def __init__(self, radius):
+        self.__radius = radius
+
+    def area(self):
+        return pi * self.__radius * self.__radius
+
+    def perimeter(self):
+        return 2 * pi * self.__radius
 
 
-class Cat(Animal):
+class Rectangle(Shape):
     """
-    Cat class inherit from Animal
+    Rectangle class inherit from Shape
     """
-    def sound(self):
-        return "Meow"
+    def __init__(self, height, width):
+        self.__height = height
+        self.__width = width
+
+    def area(self):
+        return (self.__width * self.__height)
+
+    def perimeter(self):
+        return (2 * self.__width) + (2 * self.__height)
+
+
+def shape_info(shape):
+    area = shape.area()
+    perimeter = shape.perimeter()
+    print("Area : {}" .format(area))
+    print("Perimeter : {}" .format(perimeter))
