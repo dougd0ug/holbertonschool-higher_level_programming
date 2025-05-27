@@ -15,13 +15,14 @@ class Shape(ABC):
     def area(self):
         pass
 
+    @abstractmethod
     def perimeter(self):
         pass
 
 
 class Circle(Shape):
     """
-    Circle class inherit from Shape
+    Circle class inherit Shape
     """
     def __init__(self, radius):
         self.__radius = radius
@@ -35,7 +36,7 @@ class Circle(Shape):
 
 class Rectangle(Shape):
     """
-    Rectangle class inherit from Shape
+    Rectangle class inherit Shape
     """
     def __init__(self, height, width):
         self.__height = height
@@ -51,5 +52,5 @@ class Rectangle(Shape):
 def shape_info(shape):
     area = shape.area()
     perimeter = shape.perimeter()
-    print("Area : {}" .format(area))
-    print("Perimeter : {}" .format(perimeter))
+    print("Area: {}" .format(area))
+    print("Perimeter: {}" .format(perimeter))
