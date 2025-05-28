@@ -13,14 +13,14 @@ class VerboseList(list):
         print("Added [{}] to the list." .format(item))
 
     def extend(self, item):
-        super().append(item)
+        super().extend(item)
         print("Extended the list with [{}] items." .format(len(item)))
 
     def remove(self, item):
-        super().append(item)
+        super().remove(item)
         print("Removed [{}] from the list." .format(item))
 
     def pop(self, item):
-        item = super().append(item)
+        item = super().pop(item)
         print("Popped [{}] from the list." .format(item))
         return item
