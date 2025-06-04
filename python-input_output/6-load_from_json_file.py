@@ -10,6 +10,5 @@ def load_from_json_file(filename):
     """
     writes an Object to a text file, using a JSON representation
     """
-    with open(filename, 'w', encoding="utf-8") as f:
-        finil = json.loads(filename)
-        return f.write(finil)
+    with open(filename, 'r', encoding="utf-8") as f:
+        return json.load(f)
