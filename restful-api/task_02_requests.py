@@ -5,7 +5,7 @@ import requests
 def fetch_and_print_posts():
     r = requests.get('https://jsonplaceholder.typicode.com/posts')
     code = r.status_code
-    print("Status code: {}" .format(code))
+    print("Status Code: {}" .format(code))
 
     if code == 200:
         data = r.json()
