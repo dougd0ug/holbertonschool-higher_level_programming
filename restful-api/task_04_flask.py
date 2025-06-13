@@ -13,7 +13,7 @@ def home():
 
 @app.route("/data")
 def return_data():
-    return jsonify(list(users.values()))
+    return jsonify(list(users.keys()))
 
 
 @app.route("/status")
