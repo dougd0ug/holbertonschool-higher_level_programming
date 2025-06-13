@@ -31,7 +31,7 @@ class Server(http.server.BaseHTTPRequestHandler):
             self.send_response(404)
             self.send_header('Content-Type', 'text/plain')
             self.end_headers()
-            self.wfile.write(b"404 Not Found: Endpoint not found")
+            self.wfile.write(b"Endpoint not found")
 
 
 PORT = 8000
