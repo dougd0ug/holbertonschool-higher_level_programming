@@ -1,4 +1,4 @@
 -- Create a database and a user
+CREATE USER IF NOT EXISTS 'user_0d_2'@'local_host' IDENTIFIED BY 'user_0d_2_pwd';
 CREATE DATABASE IF NOT EXISTS hbtn_0d_2;
-CREATE USER IF NOT EXISTS 'user_0d_2'@'hbtn_0d_2' IDENTIFIED BY 'user_0d_2_pwd';
-GRANT SELECT ON *.* TO 'user_0d_2'@'hbtn_0d_2';
+GRANT SELECT ON hbtn_0d_2.* TO 'user_0d_2'@'hbtn_0d_2';
