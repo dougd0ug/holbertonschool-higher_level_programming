@@ -8,20 +8,22 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
-    username = argv[1]
-    password = argv[2]
-    database = argv[3]
-    search_name = argv[4]
-    db_url = f"mysql+mysqldb://{username}:{password}@localhost:3306/{dbname}"
+    user = sys.argv[1]
+    passwd = sys.argv[2]
+    db = sys.argv[3]
 
-    engine = create_engine(db_url)
+    engine = create_engine(
+        "mysql+mysqldb://{}:{}@localhost:3306/{}".format(user, passwd, db),
+        pool_pre_ping=True
+    )
+
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    new_state = State(name='Louisiana')
+    new_state = State(name="Louisiana")
+
     session.add(new_state)
     session.commit()
 
     print(new_state.id)
-
-    session.close()
+    
