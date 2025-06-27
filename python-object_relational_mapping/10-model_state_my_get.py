@@ -8,7 +8,10 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
-    username, password, dbname, search_name = argv[1], argv[2], argv[3], argv[4]
+    username = argv[1]
+    password = argv[2]
+    dbname = argv[3]
+    search_name = argv[4]
     db_url = f"mysql+mysqldb://{username}:{password}@localhost:3306/{dbname}"
 
     engine = create_engine(db_url)
