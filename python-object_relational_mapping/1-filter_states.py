@@ -1,38 +1,38 @@
 #!/usr/bin/python3
-"""List a database"""
-
+"""
+Module containing function listing states from a database.
+"""
 import sys
 import MySQLdb
 
 
 def main():
-    """List a database"""
-
+    """
+    Lists all states starting with 'N' ordered by id from a database.
+    """
     username = sys.argv[1]
     password = sys.argv[2]
-    db_name = sys.argv[3]
+    database = sys.argv[3]
 
-    db = MySQLdb.connect(
+    conn = MySQLdb.connect(
         host="localhost",
-        port=3306,
-        user=username,
+        port=3306, user=username,
         passwd=password,
-        db=db_name
+        db=database,
+        charset="utf8"
     )
 
-    cur = db.cursor()
-
-    cur.execute(
-        "SELECT * FROM states "
-        "WHERE name LIKE BINARY 'N%' "
-        "ORDER BY id ASC"
-    )
-
-    for row in cur.fetchall():
+    cur = conn.cursor()
+    cur.execute("""
+        SELECT * FROM states
+        WHERE name LIKE BINARY 'N%'
+        ORDER BY id ASC
+    """)
+    query_rows = cur.fetchall()
+    for row in query_rows:
         print(row)
-
     cur.close()
-    db.close()
+    conn.close()
 
 
 if __name__ == "__main__":
