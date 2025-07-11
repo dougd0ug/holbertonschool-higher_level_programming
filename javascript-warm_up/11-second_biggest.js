@@ -1,11 +1,9 @@
 #!/usr/bin/node
-const size = [];
-let result;
+const args = process.argv.slice(2).map(Number);
 
-for (let i = 3; i < size; i++) {
-    result = Number(process.argv[i]);
-    size = size + size[result]
-    if (size[i] > size[i - 1])[
-        console.log(size[i])
-    ]
-  }
+if (args.length < 2) {
+  console.log(0);
+} else {
+  const uniqueSorted = [...new Set(args)].sort((a, b) => b - a);
+  console.log(uniqueSorted[1] ?? 0);
+}
