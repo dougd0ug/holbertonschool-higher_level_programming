@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./python-data_structures/2-replace_in_"
+    ]
+}
