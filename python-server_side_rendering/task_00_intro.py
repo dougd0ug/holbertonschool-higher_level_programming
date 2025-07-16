@@ -5,9 +5,11 @@ def generate_invitations(template, attendees):
           not all(isinstance(a, dict) for a in attendees)):
         raise TypeError("Attendees must be a dict.")
     elif not template:
-        raise ValueError("Template is empty, no output files generated.")
+        print("Template is empty, no output files generated.")
+        return
     elif not attendees:
-        raise ValueError("No data provided, no output files generated.")
+        print("No data provided, no output files generated.")
+        return
     else:
         i = 1
         for person in attendees:
