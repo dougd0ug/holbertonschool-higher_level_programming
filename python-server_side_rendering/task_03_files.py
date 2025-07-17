@@ -64,11 +64,11 @@ def display_products():
             product_id = int(id_param)
             products = [p for p in products if p['id'] == product_id]
             if not products:
-                error = f"Product with ID {product_id} not found."
+                error = f"Product not found"
+                return render_template('product_display.html', error=error)
         except ValueError:
             error = "Invalid ID format. ID must be an integer."
-
-    return render_template('product_display.html', products=products, error=error)
+            return render_template('product_display.html', error=error)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
