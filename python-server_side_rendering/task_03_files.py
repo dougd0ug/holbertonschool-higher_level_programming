@@ -52,9 +52,17 @@ def display_products():
     products = []
 
     if source == 'json':
-        products = read_json('products.json')
+        try:
+            products = read_json('products.json')
+        except Exception:
+            error = "Error reading JSON file."
+            return render_template('product_display.html', error=error)
     elif source == 'csv':
-        products = read_csv('products.csv')
+        try:
+            products = read_csv('products.csv')
+        except Exception:
+            error = "Error reading CSV file."
+            return render_template('product_display.html', error=error)
     else:
         error = "Wrong source. Use 'json' or 'csv'."
         return render_template('product_display.html', error=error)
@@ -64,11 +72,11 @@ def display_products():
             product_id = int(id_param)
             products = [p for p in products if p['id'] == product_id]
             if not products:
-                error = f"Product not found"
-                return render_template('product_display.html', error=error)
+                error = "Product not found"
         except ValueError:
             error = "Invalid ID format. ID must be an integer."
-            return render_template('product_display.html', error=error)
+
+    return render_template('product_display.html', products=products, error=error)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
