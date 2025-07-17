@@ -51,32 +51,28 @@ def display_products():
     error = None
     products = []
 
-    if source == 'json':
-        try:
+    try:
+        if source == 'json':
             products = read_json('products.json')
-        except Exception:
-            error = "Error reading JSON file."
-            return render_template('product_display.html', error=error)
-    elif source == 'csv':
-        try:
+        elif source == 'csv':
             products = read_csv('products.csv')
-        except Exception:
-            error = "Error reading CSV file."
+        else:
+            error = "Wrong source. Use 'json' or 'csv'."
             return render_template('product_display.html', error=error)
-    else:
-        error = "Wrong source. Use 'json' or 'csv'."
-        return render_template('product_display.html', error=error)
 
-    if id_param:
-        try:
-            product_id = int(id_param)
-            products = [p for p in products if p['id'] == product_id]
-            if not products:
-                error = "Product not found"
-        except ValueError:
-            error = "Invalid ID format. ID must be an integer."
+        if id_param:
+            try:
+                product_id = int(id_param)
+                products = [p for p in products if p['id'] == product_id]
+                if not products:
+                    error = "Product not found"
+            except ValueError:
+                error = "Invalid ID format. ID must be an integer."
 
-    return render_template('product_display.html', products=products, error=error)
+        return render_template('product_display.html', products=products, error=error)
+
+    except Exception as e:
+        return render_template('product_display.html', error=f"Internal error: {str(e)}")
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
